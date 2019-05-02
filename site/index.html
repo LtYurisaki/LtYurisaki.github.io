@@ -1,0 +1,828 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>WebScraping Tutorial</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.750b69bd.css">
+      
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#how-to-mining-web-data-using-beautiful-soup-scraping" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="WebScraping Tutorial" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              WebScraping Tutorial
+            </span>
+            <span class="md-header-nav__topic">
+              Home
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="." title="WebScraping Tutorial" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    WebScraping Tutorial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+      </label>
+    
+    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+      Home
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crawling-with-beautiful-soup" title="Crawling with Beautiful Soup" class="md-nav__link">
+    Crawling with Beautiful Soup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-crawling" title="Web Crawling" class="md-nav__link">
+    Web Crawling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-put-in-on-practice" title="Let's put in on practice" class="md-nav__link">
+    Let's put in on practice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preproccesing" title="Preproccesing" class="md-nav__link">
+    Preproccesing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-vsm" title="Building VSM" class="md-nav__link">
+    Building VSM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-filtered-word" title="Counting Filtered Word" class="md-nav__link">
+    Counting Filtered Word
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculating-tf-idf" title="Calculating TF-IDF" class="md-nav__link">
+    Calculating TF-IDF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-result" title="Clustering Result" class="md-nav__link">
+    Clustering Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afterword" title="Afterword" class="md-nav__link">
+    Afterword
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crawling-with-beautiful-soup" title="Crawling with Beautiful Soup" class="md-nav__link">
+    Crawling with Beautiful Soup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-crawling" title="Web Crawling" class="md-nav__link">
+    Web Crawling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-put-in-on-practice" title="Let's put in on practice" class="md-nav__link">
+    Let's put in on practice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preproccesing" title="Preproccesing" class="md-nav__link">
+    Preproccesing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-vsm" title="Building VSM" class="md-nav__link">
+    Building VSM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-filtered-word" title="Counting Filtered Word" class="md-nav__link">
+    Counting Filtered Word
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculating-tf-idf" title="Calculating TF-IDF" class="md-nav__link">
+    Calculating TF-IDF
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-result" title="Clustering Result" class="md-nav__link">
+    Clustering Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#afterword" title="Afterword" class="md-nav__link">
+    Afterword
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="how-to-mining-web-data-using-beautiful-soup-scraping">How To: Mining Web Data Using Beautiful Soup Scraping</h1>
+<p>This Tutorial was Authored by  <a href="https://github.com/LtYurisaki/">LtYurisaki</a>.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Web mining is the application of data mining techniques to discover patterns from the World Wide Web. As the name proposes, this is information gathered by mining the web. It makes utilization of automated apparatuses to reveal and extricate data from servers and web2 reports, and it permits organizations to get to both organized and unstructured information from browser activities, server logs, website and link structure, page content and different sources.</p>
+<p>The goal of Web structure mining is to generate structural summary about the Web site and Web page. Technically, Web content mining mainly focuses on the structure of inner-document, while Web structure mining tries to discover the link structure of the hyperlinks at the inter-document level. Based on the topology of the hyperlinks, Web structure mining will categorize the Web pages and generate the information, such as the similarity and relationship between different Web sites.</p>
+<p>Web structure mining can also have another direction -- discovering the structure of Web document itself. This type of structure mining can be used to reveal the structure (schema) of Web pages, this would be good for navigation purpose and make it possible to compare/integrate Web page schemes. This type of structure mining will facilitate introducing database techniques for accessing information in Web pages by providing a reference schema.</p>
+<p>Cited from  <a href="https://en.wikipedia.org/wiki/Web_mining">Wikipedia</a>.</p>
+<h2 id="crawling-with-beautiful-soup">Crawling with Beautiful Soup</h2>
+<p>Beautiful Soup Documentation¶
+"The Fish-Footman began by producing from under his arm a great letter, nearly as large as himself."
+Beautiful Soup is a Python library for pulling data out of HTML and XML files. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree. It commonly saves programmers hours or days of work.</p>
+<p>These instructions illustrate all major features of Beautiful Soup 4, with examples. I show you what the library is good for, how it works, how to use it, how to make it do what you want, and what to do when it violates your expectations.</p>
+<p>The examples in this documentation should work the same way in Python 2.7 and Python 3.2.</p>
+<p>You might be looking for the documentation for <a href="https://www.crummy.com/software/BeautifulSoup/bs3/documentation.html">Beautiful Soup 3</a>.. If so, you should know that Beautiful Soup 3 is no longer being developed, and that Beautiful Soup 4 is recommended for all new projects. If you want to learn about the differences between Beautiful Soup 3 and Beautiful Soup 4, see <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#porting-code-to-bs4">Porting code to BS4</a>.</p>
+<p>Cited from  <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup Documentation</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>Simple yet, here the list of all thing you need for our web scraping session</p>
+<ul>
+<li><code>Python ver 2.0 Above</code> - Main language we'll use.</li>
+<li><code>Python pip</code> - For ease to install other python lib.</li>
+<li><code>Beautiful soup library</code> - Most easy to use for web scraping(according to writters).</li>
+<li><code>Sastrawi (or other equivalent local language dictionary) library</code> - Dictionary as base so our programs can recognize words to take or not.</li>
+<li><code>Request library</code> - Put a URL and this will do the rest for you.</li>
+<li><code>Sklearn library</code> - No need for confusing computation since sklearn will do it instead.</li>
+<li><code>Sqlite (or other equivalent DBMS)</code> - We need to save our work don't we?.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>In order for our works, you'll need Python installed on your system, as well as the Python package manager, pip. You can check if you have these already installed from the command line:</p>
+<pre><code>$ python --version
+Python 2.7.2
+$ pip --version
+pip 1.5.2
+</code></pre>
+<p>*<code>Installing Python</code></p>
+<p><a href="https://www.python.org/">Install Python</a> by downloading an installer appropriate for your system from <a href="https://www.python.org/downloads/">python.org</a> and running it.</p>
+<pre><code>    Note
+
+    If you are installing Python on Windows, be sure to check the box to have Python added to your PATH if the installer offers such an option (it's normally off by default).
+</code></pre>
+<p>*<code>Installing pip</code></p>
+<p>If you're using a recent version of Python, the Python package manager, pip, is most likely installed by default. If you need to install <a href="https://pip.readthedocs.io/en/stable/installing/">pip</a> for the first time, download <a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a>. Then run the following command to install it:</p>
+<pre><code>python get-pip.py
+</code></pre>
+<p>*<code>Installing Beautiful Soup</code></p>
+<p>You might be looking for the documentation for <a href="https://www.crummy.com/software/BeautifulSoup/bs3/documentation.html">Beautiful Soup 3</a>.. If so, you should know that Beautiful Soup 3 is no longer being developed, and that Beautiful Soup 4 is recommended for all new projects. If you want to learn about the differences between Beautiful Soup 3 and Beautiful Soup 4, see <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#porting-code-to-bs4">Porting code to BS4</a>.</p>
+<pre><code>pip install beautifulsoup4
+</code></pre>
+<p>Remember to change the cmd directory on pip location. For ubuntu and Mac os can be seen <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup">here</a></p>
+<p>*<code>Installing Sastrawi</code></p>
+<p>Sastrawi can be installed via pip, by running the following commands in terminal/command prompt : </p>
+<pre><code>pip install Sastrawi
+</code></pre>
+<p>*<code>Installing Request</code></p>
+<p>The good news is that there are a few ways to install the Requests library. To see the full list of options at your disposal, you can view the official install documentation for Requests here.
+You can make use of pip, easy_install, or tarball.If you’d rather work with source code, you can get that on GitHub, as well.
+For the purpose of this guide, we are going to use pip to install the library. 
+In your Python interpreter, type the following:</p>
+<pre><code>pip install requests
+</code></pre>
+<p>*<code>Installing Scikit-learn</code></p>
+<p>Scikit-learn requires:</p>
+<p>Python (&gt;= 2.7 or &gt;= 3.4),
+NumPy (&gt;= 1.8.2),
+SciPy (&gt;= 0.13.3).</p>
+<pre><code>    Warning Scikit-learn 0.20 is the last version to support Python 2.7 and Python 3.4. Scikit-learn 0.21 will require Python 3.5 or newer.
+    If you already have a working installation of numpy and scipy, the easiest way to install scikit-learn is
+</code></pre>
+<p>using pip</p>
+<pre><code>pip install -U scikit-learn
+</code></pre>
+<p>or conda:</p>
+<pre><code>conda install scikit-learn
+</code></pre>
+<p>*`Installing Sqlite</p>
+<p>Eternal link <a href="http://www.sqlitetutorial.net/download-install-sqlite/">here</a></p>
+<h2 id="web-crawling">Web Crawling</h2>
+<p>Here’s an HTML document I’ll be using as an example throughout this document. It’s part of a story from Alice in Wonderland:</p>
+<pre><code>html_doc = """
+&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse's story&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="title"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;
+
+&lt;p class="story"&gt;Once upon a time there were three little sisters; and their names were
+&lt;a href="http://example.com/elsie" class="sister" id="link1"&gt;Elsie&lt;/a&gt;,
+&lt;a href="http://example.com/lacie" class="sister" id="link2"&gt;Lacie&lt;/a&gt; and
+&lt;a href="http://example.com/tillie" class="sister" id="link3"&gt;Tillie&lt;/a&gt;;
+and they lived at the bottom of a well.&lt;/p&gt;
+
+&lt;p class="story"&gt;...&lt;/p&gt;
+"""
+</code></pre>
+<p>Running the “three sisters” document through Beautiful Soup gives us a BeautifulSoup object, which represents the document as a nested data structure:</p>
+<pre><code>from bs4 import BeautifulSoup
+soup = BeautifulSoup(html_doc, 'html.parser')
+
+print(soup.prettify())
+# &lt;html&gt;
+#  &lt;head&gt;
+#   &lt;title&gt;
+#    The Dormouse's story
+#   &lt;/title&gt;
+#  &lt;/head&gt;
+#  &lt;body&gt;
+#   &lt;p class="title"&gt;
+#    &lt;b&gt;
+#     The Dormouse's story
+#    &lt;/b&gt;
+#   &lt;/p&gt;
+#   &lt;p class="story"&gt;
+#    Once upon a time there were three little sisters; and their names were
+#    &lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;
+#     Elsie
+#    &lt;/a&gt;
+#    ,
+#    &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;
+#     Lacie
+#    &lt;/a&gt;
+#    and
+#    &lt;a class="sister" href="http://example.com/tillie" id="link2"&gt;
+#     Tillie
+#    &lt;/a&gt;
+#    ; and they lived at the bottom of a well.
+#   &lt;/p&gt;
+#   &lt;p class="story"&gt;
+#    ...
+#   &lt;/p&gt;
+#  &lt;/body&gt;
+# &lt;/html&gt;
+</code></pre>
+<p>Here are some simple ways to navigate that data structure:</p>
+<pre><code>soup.title
+# &lt;title&gt;The Dormouse's story&lt;/title&gt;
+
+soup.title.name
+# u'title'
+
+soup.title.string
+# u'The Dormouse's story'
+
+soup.title.parent.name
+# u'head'
+
+soup.p
+# &lt;p class="title"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;
+
+soup.p['class']
+# u'title'
+
+soup.a
+# &lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;
+
+soup.find_all('a')
+# [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,
+#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,
+#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]
+
+soup.find(id="link3")
+# &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;
+One common task is extracting all the URLs found within a page’s &lt;a&gt; tags:
+
+for link in soup.find_all('a'):
+    print(link.get('href'))
+# http://example.com/elsie
+# http://example.com/lacie
+# http://example.com/tillie
+Another common task is extracting all the text from a page:
+
+print(soup.get_text())
+# The Dormouse's story
+#
+# The Dormouse's story
+#
+# Once upon a time there were three little sisters; and their names were
+# Elsie,
+# Lacie and
+# Tillie;
+# and they lived at the bottom of a well.
+#
+# ...
+</code></pre>
+<p>Does this look like what you need? If so, read on.</p>
+<h2 id="lets-put-in-on-practice">Let's put in on practice</h2>
+<p>first we put all library we need for on tops.</p>
+<pre><code>import requests
+from bs4 import BeautifulSoup
+import sqlite3
+import csv
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+</code></pre>
+<p>the import csv was used so we can easy to access the result, so:.</p>
+<pre><code>def write_csv(nama_file, isi, tipe='w'):
+    with open(nama_file, mode=tipe) as tbl:
+        tbl_writer = csv.writer(tbl, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        for row in isi:
+            tbl_writer.writerow(row)
+</code></pre>
+<p>we put it on func so we can call it any time.</p>
+<pre><code>def crawl(src):
+    global c
+    try :
+        page = requests.get(src)
+        soup = BeautifulSoup(page.content, 'html.parser')
+        kata = soup.findAll('tr')
+        penutur = soup.findAll(class_='firstHeading')
+
+        for i in range(len(kata)):
+            a = kata[i].getText()
+            b = penutur[0].getText()
+            conn.execute('INSERT INTO Kata(Katas, Penutur) VALUES ("%s", "%s")' %(a, b));
+
+    except ValueError:
+        print('Download selesai')
+</code></pre>
+<p>its the most basic we can use from beautiful soups.</p>
+<pre><code>conn = sqlite3.connect('dbs.db')
+c = 1
+choice = input("Perbarui data? Y/T ").upper()
+if choice == "Y":
+    conn.execute('drop table if exists Kata')
+    conn.execute('''CREATE TABLE Kata
+             (Katas TEXT NOT NULL,
+             Penutur TEXT NOT NULL);''')
+    crawl("https://id.wikiquote.org/wiki/Plato")
+    crawl("https://id.wikiquote.org/wiki/William_Jones_(ahli_bahasa)")
+    crawl("https://id.wikiquote.org/wiki/Isaac_Asimov")
+    crawl("https://id.wikiquote.org/wiki/Edsger_Dijkstra")
+    crawl("https://id.wikiquote.org/wiki/Benjamin_Franklin")
+    crawl("https://id.wikiquote.org/wiki/Archimedes")
+    crawl("https://id.wikiquote.org/wiki/Albert_Einstein")
+    crawl("https://id.wikiquote.org/wiki/Marcus_Aurelius")
+    crawl("https://id.wikiquote.org/wiki/Jean-Paul_Sartre")
+    crawl("https://id.wikiquote.org/wiki/Epictetus")
+    crawl("https://id.wikiquote.org/wiki/Vladimir_Putin")
+    crawl("https://id.wikiquote.org/wiki/Xi_Jinping")
+    crawl("https://id.wikiquote.org/wiki/Abraham_Lincoln")
+    crawl("https://id.wikiquote.org/wiki/Adolf_Hitler")
+    crawl("https://id.wikiquote.org/wiki/Askar_Akayev")
+    crawl("https://id.wikiquote.org/wiki/Tsai_Ing-wen")
+    crawl("https://id.wikiquote.org/wiki/Shimon_Peres")
+    crawl("https://id.wikiquote.org/wiki/Tan_Malaka")
+    crawl("https://id.wikiquote.org/wiki/Betty_Smith")
+    crawl("https://id.wikiquote.org/wiki/Mark_Twain")
+    crawl("https://id.wikiquote.org/wiki/Petrus_Josephus_Zoetmulder")
+    cursor = conn.execute("SELECT * from Kata")
+    for row in cursor:
+        print(row)
+    conn.commit()
+</code></pre>
+<h2 id="preproccesing">Preproccesing</h2>
+<pre><code>def preprosesing(txt):
+    SWfactory = StopWordRemoverFactory()
+    stopword = SWfactory.create_stop_word_remover()
+
+    stop = stopword.remove(txt)
+    Sfactory = StemmerFactory()
+    stemmer = Sfactory.create_stemmer()
+
+    stem = stemmer.stem(stop)
+    return stem
+
+def countWord(txt):
+    d = dict()
+    for i  in txt.split():
+        if d.get(i) == None:
+            d[i] = txt.count(i)
+    return d
+</code></pre>
+<h2 id="building-vsm">Building VSM</h2>
+<pre><code>def add_row_VSM(d):
+    VSM.append([])
+    for i in VSM[0]:
+        if d.get(i) == None:
+            VSM[-1].append(0)
+        else :
+            VSM[-1].append(d.pop(i));
+
+for i in d:
+    VSM[0].append(i)
+    for j in range(1, len(VSM)-1):
+        VSM[j].append(0)
+    VSM[-1].append(d.get(i))
+
+print("Please Wait. Building VSM...")
+cursor = conn.execute("SELECT * from Kata")
+cursor = cursor.fetchall()
+pertama = True
+corpus = list()
+c=1
+for row in cursor:
+    #print ('Proses : %.2f' %((c/len(cursor))*100) + '%'); c+=1
+    txt = row[0]
+    cleaned = preprosesing(txt)
+    corpus.append(cleaned)
+    d = countWord(cleaned)
+    if pertama:
+        pertama = False
+        VSM = list((list(), list()))
+        for key in d:
+            VSM[0].append(key)
+            VSM[1].append(d[key])
+    else:
+        add_row_VSM(d)
+    #VSM[-1].append(row[2])
+    #VSM[-1].append(row[3])
+
+with open('tableview.csv', mode='w') as tbl:
+    tbl_writer = csv.writer(tbl, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+    for row in VSM:
+        tbl_writer.writerow(row)
+
+write_csv("bow_manual.csv", VSM)
+</code></pre>
+<h2 id="counting-filtered-word">Counting Filtered Word</h2>
+<pre><code># BoW using library
+vectorizer = CountVectorizer(min_df=1, ngram_range=(1,1))
+BoW_matrix = vectorizer.fit_transform(corpus)
+write_csv("bow_lib.csv", BoW_matrix.toarray())
+</code></pre>
+<h2 id="calculating-tf-idf">Calculating TF-IDF</h2>
+<pre><code># calculating TF-IDF
+vectorizer = TfidfVectorizer()
+tfidf_matrix = vectorizer.fit_transform(corpus)
+feature_name = vectorizer.get_feature_names()
+
+#print(tfidf_matrix)
+write_csv("tfidf.csv", [feature_name])
+write_csv("tfidf.csv", tfidf_matrix.toarray(), 'a')
+</code></pre>
+<h2 id="clustering-result">Clustering Result</h2>
+<pre><code># Clustering
+kmeans = KMeans(n_clusters=5, random_state=0).fit(tfidf_matrix.todense())
+write_csv("Kluster_label.csv", [kmeans.labels_])
+for i in range(len(kmeans.labels_)):
+    print("Doc %d =&gt;&gt; cluster %d" %(i+1, kmeans.labels_[i]))
+</code></pre>
+<h2 id="afterword">Afterword</h2>
+<p>And with that, we just learned how to scrape data with Beautiful Soup which, in my opinion, is quite easy in comparison with regular expression and CSS selectors. And just so you are aware, this is just one of the ways of scraping data with Python.</p>
+<p>And just to reiterate this important point: web scraping is legal in one context, and illegal in another. Before you scrape data from a webpage, it is strictly advisable to check the bot rules of a website by appending the robots.txt at the end of the URL, just like this: www.example.com/robots.txt. Your IP address may be restricted till further notice if you fail to do so. Hope you’ll use the skill you just learned appropriately, cheers!</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.39abc4af.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
